@@ -1,0 +1,34 @@
+/*!
+ * Ext JS Library 3.3.0
+ * Copyright(c) 2006-2010 Ext JS, Inc.
+ * licensing@extjs.com
+ * http://www.extjs.com/license
+ */
+/**
+ * GridFilters Styles
+ **/
+/*
+.x-grid3-hd-row .ux-filtered-column {
+	border-left:  1px solid #C7E3B4;
+	border-right: 1px solid #C7E3B4;
+}
+
+.x-grid3-hd-row .ux-filtered-column .x-grid3-hd-inner {
+	background-image: url(../images/header_bg.gif);
+}
+
+.ux-filtered-column .x-grid3-hd-btn {
+	background-image: url(../images/hd-btn.gif);
+}
+*/
+.ux-filtered-column.sort-asc .x-grid3-sort-icon {
+	background-image: url(/ext-3.3.0/examples/ux/gridfilters/images/sort_filtered_asc.gif) !important;
+}
+
+.ux-filtered-column.sort-desc .x-grid3-sort-icon {
+	background-image: url(/ext-3.3.0/examples/ux/gridfilters/images/sort_filtered_desc.gif) !important;
+}
+
+.ux-gridfilter-text-icon {
+	background-image: url(/ext-3.3.0/examples/ux/gridfilters/images/find.png) !important;
+}
