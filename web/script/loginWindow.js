@@ -153,6 +153,7 @@ loginWindow=function(){
 					var log=user+'登陆';
 					var obj = Ext.decode(action.response.responseText);
 					var authority=obj.authority;
+                    /*
 					Ext.Ajax.request({
 						url: 'php/insertLog.php',
 						success: function(response){
@@ -163,7 +164,9 @@ loginWindow=function(){
 						},
 						params: {'log':log}
 					});
+                    */
 					Ext.getCmp('loginWindow').destroy();
+                    authority=1;
 					doFrame(authority);
 				},
 				//服务器返回失败后的处理函数

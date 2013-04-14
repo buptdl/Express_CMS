@@ -1,8 +1,8 @@
 ﻿<?php 
-
+/*暂不使用数据库
 include  'dbconfig.php';
 include  'user.php'; 
-
+*/
 $user1 = $_POST['user'];
 $pwd1 = $_POST['password'];
 
@@ -32,6 +32,7 @@ if (!isset($_POST['super_auto'])/*以自动登陆状态登陆*/ && strtolower($_
 }
 else 
 {
+/*跳过验证
 	if(isset($_POST['user'])&&isset($_POST['password']))
 	{
 		$user = User::getByUsername($_POST['user']);
@@ -62,6 +63,8 @@ else
 			$arr=array('success'=>false,'msg'=>"用户名或密码错误");
 		}
 	}
+
+ */
 }
 
 //跳过验证

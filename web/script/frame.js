@@ -167,24 +167,14 @@ function doFrame(authority)
 			},
 			items:[{
 				xtype:'treepanel',
-				title:'综合功能',
+				title:'快件信息管理',
 				id:'treePanel1',
 				lines:false,
 				rootVisible:false,
 				root: new Ext.tree.AsyncTreeNode({
 					expanded: true,
 					children: [{
-						text: '导航页',
-						icon:'images/icons/fav.gif',
-						leaf: true,
-						listeners:{
-							scope:this,
-							click:function(node,e){
-								createChangeTab('homePage');
-							}
-						}
-					},{
-						text: '重点关注',
+						text: '快件查询',
 						icon:'images/icons/article.gif',
 						leaf: true,
 						listeners:{
@@ -194,7 +184,7 @@ function doFrame(authority)
 							}
 						}
 					},{
-						text: '舆情简报',
+						text: '运单录入',
 						icon:'images/icons/article.gif',
 						leaf: true,
 						listeners:{
@@ -204,7 +194,7 @@ function doFrame(authority)
 							}
 						}
 					},{
-						text: '北邮新闻',
+						text: '快件状态更新',
 						icon:'images/icons/rss.gif',
 						leaf: true,
 						listeners:{
@@ -214,24 +204,13 @@ function doFrame(authority)
 							}
 						}
 					},{
-						text: '论坛十大',
+						text: '异常快件处理',
 						icon:'images/icons/calendar-sprites.gif',
 						leaf: true,
-						hidden:true,//废弃
 						listeners:{
 							scope:this,
 							click:function(node,e){
 								createChangeTab('top10');
-							}
-						}
-					},{
-						text: '微博',
-						icon:'images/icons/cmp.gif',
-						leaf: true,
-						listeners:{
-							scope:this,
-							click:function(node,e){
-								createChangeTab('microBlog');
 							}
 						}
 					}]
@@ -239,14 +218,14 @@ function doFrame(authority)
 				//html:'test1'
 			},{
 				xtype:'treepanel',
-				title:'WEB资源监视',
+				title:'财务信息管理',
 				id:'treePanel2',
 				lines:false,
 				rootVisible:false,
 				root:new Ext.tree.AsyncTreeNode({
 					expanded:true,
 					children:[{
-						text:'非法信息',
+						text:'运费设定',
 						icon:'images/icons/album.gif',
 						leaf: true,
 						listeners:{
@@ -256,7 +235,7 @@ function doFrame(authority)
 							}
 						}
 					},{
-						text:'不良信息',
+						text:'收支记录',
 						icon:'images/icons/exclamation.gif',
 						leaf: true,
 						listeners:{
@@ -266,7 +245,7 @@ function doFrame(authority)
 							}
 						}
 					},{
-						text:'敏感信息',
+						text:'收入统计',
 						icon:'images/icons/warning.gif',
 						leaf: true,
 						listeners:{
@@ -275,28 +254,18 @@ function doFrame(authority)
 								createChangeTab('WebSensitiveMonitor');
 							}
 						}
-					},{
-						text:'高级统计',
-						icon:'images/icons/comment.gif',
-						leaf: true,
-						listeners:{
-							scope:this,
-							click:function(node,e){
-								createChangeTab('WebChart');
-							}
-						}
 					}]
 				})
 			},{
 				xtype:'treepanel',
-				title:'热点突发检测',
+				title:'客户信息管理',
 				id:'treePanel3',
 				lines:false,
 				rootVisible:false,
 				root:new Ext.tree.AsyncTreeNode({
 					expanded:true,
 					children:[{
-						text:'小时热门话题统计',
+						text:'运单发送方',
 						icon:'images/icons/icon-by-category.gif',
 						leaf: true,
 						listeners:{
@@ -306,7 +275,7 @@ function doFrame(authority)
 							}
 						}
 					},{
-						text:'每日热门话题统计',
+						text:'物流承运方',
 						icon:'images/icons/icon-by-date.gif',
 						leaf: true,
 						listeners:{
@@ -315,38 +284,18 @@ function doFrame(authority)
 								createChangeTab('TopicDaily');
 							}
 						}
-					},{
-						text:'突发事件检测',
-						icon:'images/icons/event.gif',
-						leaf: true,
-						listeners:{
-							scope:this,
-							click:function(node,e){
-								createChangeTab('TopicEmerg');
-							}
-						}
-					},{
-						text:'论坛十大',
-						icon:'images/icons/calendar-sprites.gif',
-						leaf: true,
-						listeners:{
-							scope:this,
-							click:function(node,e){
-								createChangeTab('TopTen');
-							}
-						}
 					}]
 				})
 			},{
 				xtype:'treepanel',
-				title:'用户行为分析',
+				title:'公司组织结构管理',
 				id:'treePanel4',
 				lines:false,
 				rootVisible:false,
 				root:new Ext.tree.AsyncTreeNode({
 					expanded:true,
 					children:[{
-						text:'活跃用户',
+						text:'部门管理',
 						icon:'images/icons/album.gif',
 						leaf: true,
 						listeners:{
@@ -356,7 +305,7 @@ function doFrame(authority)
 							}
 						}
 					},{
-						text:'异常用户',
+						text:'职员管理',
 						icon:'images/icons/exclamation.gif',
 						leaf: true,
 						listeners:{
@@ -365,49 +314,19 @@ function doFrame(authority)
 								createChangeTab('abnormal');
 							}
 						}
-					},{
-						text:'舆论领袖',
-						icon:'images/icons/warning.gif',
-						leaf: true,
-						listeners:{
-							scope:this,
-							click:function(node,e){
-								createChangeTab('leader');
-							}
-						}
-					},{
-						text:'特定板块',
-						icon:'images/icons/comment.gif',
-						leaf: true,
-						listeners:{
-							scope:this,
-							click:function(node,e){
-								createChangeTab('tedingyonghu');
-							}
-						}
-					},{
-						text:'分时段在线人数统计',
-						icon:'images/icons/comment.gif',
-						leaf: true,
-						listeners:{
-							scope:this,
-							click:function(node,e){
-								createChangeTab('tianjishi');
-							}
-						}
 					}]
 				})
 			},{
 				xtype:'treepanel',
-				title:'用户配置信息',
+				title:'个人信息管理',
 				id:'treePanel5',
-				hidden:(authority==='2'||authority==='4')?false:true,
+				hidden:false,
 				lines:false,
 				rootVisible:false,
 				root:new Ext.tree.AsyncTreeNode({
 					expanded:true,
 					children:[{
-						text:'话题聚类与突发检测',
+						text:'个人基本信息',
 						icon:'images/icons/example.gif',
 						leaf: true,
 						listeners:{
@@ -417,7 +336,7 @@ function doFrame(authority)
 							}
 						}
 					},{
-						text:'web资源配置',
+						text:'修改登录密码',
 						icon:'images/icons/docs.gif',
 						leaf: true,
 						listeners:{
@@ -426,49 +345,7 @@ function doFrame(authority)
 								createChangeTab('dicGrid');
 							}
 						}
-					},{
-						text:'用户行为模块配置',
-						icon:'images/icons/docs.gif',
-						leaf: true,
-						listeners:{
-							scope:this,
-							click:function(node,e){
-								createChangeTab('behaveGrid');
-							}
-						}
 					}]				
-				})
-			},{
-				xtype:'treepanel',
-				title:'系统管理',
-				id:'treePanel6',
-				lines:false,
-				hidden:(authority==='2'||authority==='4')?false:true,
-				rootVisible:false,
-				root:new Ext.tree.AsyncTreeNode({
-					expanded:true,
-					children:[{
-						text:'用户权限管理',
-						icon:'images/icons/forum.gif',
-						hidden:authority==='4'?false:true,
-						leaf: true,
-						listeners:{
-							scope:this,
-							click:function(node,e){
-								createChangeTab('userGrid');
-							}
-						}
-					},{
-						text:'系统日志',
-						icon:'images/icons/collapse-all.gif',
-						leaf: true,
-						listeners:{
-							scope:this,
-							click:function(node,e){
-								createChangeTab('systemLog');
-							}
-						}
-					}]
 				})
 			}]
 		},{
@@ -521,7 +398,7 @@ function doFrame(authority)
 						createChangeTab('homePage');
 					}
 				},'-',{
-					text:'综合功能(<U>i</U>)',
+					text:'快件信息管理(<U>i</U>)',
 					id:'bIntegration',
 					listeners:{
 						menushow:function(){
@@ -566,40 +443,34 @@ function doFrame(authority)
 					menu:{
 						id:'bIntergrationMenu',
 						items:[{
-							text:'重点关注(<U>f</U>)',
+							text:'快件查询(<U>f</U>)',
 							icon:'images/icons/article.gif',
 							handler:function(b,e){
 								createChangeTab('briefReport');
 							}
 						},{
-							text:'舆情简报(<U>b</U>)',
+							text:'运单录入(<U>b</U>)',
 							icon:'images/icons/article.gif',
 							handler:function(b,e){
 								createChangeTab('exBriefReport');
 							}
 						},{
-							text:'北邮新闻(<U>n</U>)',
+							text:'快件状态更新(<U>n</U>)',
 							icon:'images/icons/rss.gif',
 							handler:function(b,e){
 								createChangeTab('newsGrid');
 							}
 						},{
-							text:'论坛十大(<U>n</U>)',
+							text:'异常快件处理(<U>n</U>)',
 							hidden:true,
 							icon:'images/icons/calendar-sprites.gif',
 							handler:function(b,e){
 								createChangeTab('top10');
 							}
-						},{
-							text:'微博(<U>n</U>)',
-							icon:'images/icons/cmp.gif',
-							handler:function(b,e){
-								createChangeTab('microBlog');
-							}
 						}]
 					}
 				},{
-					text:'Web资源监视(<U>w</U>)',
+					text:'财务信息管理(<U>w</U>)',
 					id:'bWeb',
 					listeners:{
 						menushow:function(){
@@ -637,33 +508,27 @@ function doFrame(authority)
 					menu:{
 						id:'bWebMenu',
 						items:[{
-							text:'敏感信息(<U>s</U>)',
+							text:'运费设定(<U>s</U>)',
 							icon:'images/icons/icon-by-category.gif',
 							handler:function(b,e){
 								createChangeTab('WebSensitiveMonitor');
 							}											
 						},{
-							text:'非法信息(<U>l</U>)',
+							text:'收支记录(<U>l</U>)',
 							icon:'images/icons/icon-by-date.gif',
 							handler:function(b,e){
 								createChangeTab('WebIllegalMonitor');
 							}						
 						},{
-							text:'不良信息(<U>n</U>)',
+							text:'收入统计(<U>n</U>)',
 							icon:'images/icons/event.gif',
 							handler:function(b,e){
 								createChangeTab('WebNegativeMonitor');
 							}
-						},{
-							text:'高级统计(<U>c</U>)',
-							icon:'images/icons/event.gif',
-							handler:function(b,e){
-								createChangeTab('WebChart');
-							}
 						}]
 					}
 				},{
-					text:'热点突发检测(<U>a</U>)',
+					text:'客户信息管理(<U>a</U>)',
 					id:'bAcute',
 					listeners:{
 						menushow:function(){
@@ -701,33 +566,21 @@ function doFrame(authority)
 					menu:{
 						id:'bAcuteMenu',
 						items:[{
-							text:'小时热门话题统计(<U>o</U>)',
+							text:'运单发送方(<U>o</U>)',
 							icon:'images/icons/icon-by-category.gif',
 							handler:function(b,e){
 								createChangeTab('TopicHours');
 							}											
 						},{
-							text:'每日热门话题统计(<U>d</U>)',
+							text:'物流承运网点(<U>d</U>)',
 							icon:'images/icons/icon-by-date.gif',
 							handler:function(b,e){
 								createChangeTab('TopicDaily');
 							}						
-						},{
-							text:'突发事件检测(<U>e</U>)',
-							icon:'images/icons/event.gif',
-							handler:function(b,e){
-								createChangeTab('TopicEmerg');
-							}
-						},{
-							text:'论坛十大(<U>e</U>)',
-							icon:'images/icons/calendar-sprites.gif',
-							handler:function(b,e){
-								createChangeTab('TopTen');
-							}
 						}]
 					}
 				},{
-					text:'用户行为分析(<U>u</U>)',
+					text:'公司组织管理(<U>u</U>)',
 					id:'bUser',
 					listeners:{
 						menushow:function(){
@@ -772,39 +625,21 @@ function doFrame(authority)
 					menu:{
 						id:'bUserMenu',
 						items:[{
-							text:'活跃用户(<U>b</U>)',
+							text:'部门管理(<U>b</U>)',
 							icon:'images/icons/album.gif',
 							handler:function(b,e){
 								createChangeTab('huoyueyonghu');
 							}
 						},{
-							text:'异常用户(<U>n</U>)',
+							text:'职员管理(<U>n</U>)',
 							icon:'images/icons/exclamation.gif',
 							handler:function(b,e){
 								createChangeTab('abnormal');
 							}
-						},{
-							text:'舆论领袖(<U>l</U>)',
-							icon:'images/icons/warning.gif',
-							handler:function(b,e){
-								createChangeTab('leader');
-							}
-						},{
-							text:'特定板块(<U>c</U>)',
-							icon:'images/icons/comment.gif',
-							handler:function(b,e){
-								createChangeTab('tedingyonghu');
-							}
-						},{
-							text:'分时段在线人数统计(<U>t</U>)',
-							icon:'images/icons/comment.gif',
-							handler:function(b,e){
-								createChangeTab('tianjishi');
-							}
 						}]
 					}
 				},'-',{
-					text:'用户配置(<U>p</U>)',
+					text:'个人信息管理(<U>p</U>)',
 					id:'bPreference',
 					hidden:(authority==='2'||authority==='4')?false:true,
 					listeners:{
@@ -836,62 +671,16 @@ function doFrame(authority)
 					menu:{
 						id:'bPreferenceMenu',
 						items:[{
-							text:'话题聚类与突发检测(<U>c</U>)',
+							text:'个人基本信息(<U>c</U>)',
 							icon:'images/icons/example.gif',
 							handler:function(b,e){
 								createChangeTab('clusterGrid');
 							}
 						},{
-							text:'web资源配置(<U>d</U>)',
+							text:'修改登录密码(<U>d</U>)',
 							icon:'images/icons/docs.gif',
 							handler:function(b,e){
 								createChangeTab('dicGrid');
-							}
-						},{
-							text:'用户行为模块配置(<U>b</U>)',
-							icon:'images/icons/docs.gif',
-							handler:function(b,e){
-								createChangeTab('behaveGrid');
-							}
-						}]
-					}
-				},'-',{
-					text:'系统管理(<U>s</U>)',
-					id:'bSystem',
-					hidden:(authority==='2'||authority==='4')?false:true,
-					listeners:{
-						menushow:function(){
-							new Ext.KeyMap('bSystemMenu',[{
-								key:'q',
-								alt:true,
-								stopEvent:true,
-								fn:function(){
-									keyPressMenu('userGrid','bSystem');
-								}
-							},{
-								key:'l',
-								alt:true,
-								stopEvent:true,
-								fn:function(){
-									keyPressMenu('systemLog','bSystem');
-								}
-							}])
-						}
-					},
-					menu:{
-						id:'bSystemMenu',
-						items:[{
-							text:'用户权限管理(<U>q</U>)',
-							hidden:(authority==='4')?false:true,
-							icon:'images/icons/forum.gif',
-							handler:function(b,e){
-								createChangeTab('userGrid');
-							}
-						},{
-							text:'系统日志(<U>l</U>)',
-							icon:'images/icons/collapse-all.gif',
-							handler:function(b,e){
-								createChangeTab('systemLog');
 							}
 						}]
 					}

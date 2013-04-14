@@ -1,142 +1,102 @@
 homePage=function(){
 	var authority=Ext.getCmp('mainView').authority;
 	var data=[{
-		title:'综合功能',
+		title:'快件信息管理',
 		hidden:false,
 		nodes:[{
-			text:'舆情简报',
+			text:'快件查询',
 			id:'briefReport',
 			icon:'images/thumb/briefReportThumb.gif',
 			hidden:false,
-			detail:'<h1><center>舆情简报</center></h1><br>&nbsp;&nbsp;&nbsp;&nbsp;统一舆情系统将把各个功能的结果简明扼要地呈现在六个表格中，让您在最少的时间内把握最重要的情报。<br>&nbsp;&nbsp;&nbsp;&nbsp;其中包括：今日话题，今日活跃用户，异常用户，领袖用户，今日在线人数统计和北邮新闻摘要。'
+			detail:'按运单号、客户名、时间、运单状态等运单属性相关的条件查询'
 		},{
-			text:'北邮新闻',
+			text:'运单录入',
 			id:'newsGrid',
 			icon:'images/thumb/newsGridThumb.gif',
 			hidden:false,
-			detail:'<h1><center>北邮新闻</center></h1><br>&nbsp;&nbsp;&nbsp;&nbsp;显示从互联网上获取的有关北邮的新闻资讯。'
+			detail:'提供客户发货清单录入包括人工手功录入和EXCEL表格批量录入'
+		},{
+			text:'快件状态更新',
+			id:'newsGrid',
+			icon:'images/thumb/newsGridThumb.gif',
+			hidden:false,
+			detail:'包括快件收取、入库、出库、送达等处理快件的操作信息更新提供两种操作接口在界面人工点击相应按键更新、通过巴枪扫描生成运单号列表批量更新'
+		},{
+			text:'异常快件处理',
+			id:'newsGrid',
+			icon:'images/thumb/newsGridThumb.gif',
+			hidden:false,
+			detail:'异常运单指批量更新运单状态时输入不存在的运单号，用于异常快件的预警。'
 		}]
 	},{
-		title:'Web资源监视',
+		title:'财务信息管理',
 		hidden:false,
 		nodes:[{
-			text:'敏感信息',
+			text:'运费设定',
 			id:'WebSensitiveMonitor',
 			icon:'images/thumb/WebSensitiveMonitorThumb.gif',
 			hidden:false,
-			detail:'敏感信息'
+			detail:'制定修攻不同收发区间的运费。'
 		},{
-			text:'非法信息',
+			text:'代收款收支记录',
 			id:'WebIllegalMonitor',
 			icon:'images/thumb/WebIllegalMonitorThumb.gif',
 			hidden:false,
-			detail:'非法信息'
+			detail:'包括从商家收取的邮费款、支付给快递商的费用。'
 		},{
-			text:'不良信息',
+			text:'收入统计',
 			id:'WebNegativeMonitor',
 			icon:'images/thumb/WebNegativeMonitorThumb.gif',
 			hidden:false,
-			detail:'不良信息'
-		},{
-			text:'高级信息',
-			id:'WebChart',
-			icon:'images/thumb/WebChartThumb.gif',
-			hidden:false,
-			detail:'高级信息'
+			detail:'按一定时间段给出公司运营收支总额的变化情况。提供统计结果的导出接口'
 		}]
 	},{
-		title:'热点突发检测',
+		title:'客户信息管理',
 		hidden:false,
 		nodes:[{
-			text:'小时热门话题',
+			text:'上流运单发送方',
 			id:'TopicHours',
 			icon:'images/thumb/TopicHoursThumb.gif',
 			hidden:false,
-			detail:'小时热门话题'
+			detail:'上流运单发送方的信息'
 		},{
-			text:'每天热门话题',
+			text:'下流物流承运方',
 			id:'TopicDaily',
 			icon:'images/thumb/TopicDailyThumb.gif',
 			hidden:false,
-			detail:'每天热门话题'
-		},{
-			text:'突发事件检测',
-			id:'TopicEmerg',
-			icon:'images/thumb/TopicEmergThumb.gif',
-			hidden:false,
-			detail:'突发事件检测'
+			detail:'下流物流承运方的网点信息'
 		}]
 	},{
-		title:'用户行为分析',
+		title:'公司组织结构管理',
 		hidden:false,
 		nodes:[{
-			text:'活跃用户',
+			text:'部门管理',
 			id:'huoyueyonghu',
 			icon:'images/thumb/huoyueyonghuThumb.gif',
 			hidden:false,
-			detail:'<h1><center>小时热门话题</h1></center><br>&nbsp;&nbsp;&nbsp;&nbsp;反映各日统计的的活跃用户及其活跃度'
+			detail:'提供各部门权限、经理的设置。'
 		},{
-			text:'异常用户',
+			text:'职员管理',
 			id:'abnormal',
 			icon:'images/thumb/abnormalThumb.gif',
 			hidden:false,
-			detail:'<h1><center>每天热门话题</h1></center><br>&nbsp;&nbsp;&nbsp;&nbsp;反映各日统计的的异常用户及相对应的敏感词'
-		},{
-			text:'领导用户',
-			id:'leader',
-			icon:'images/thumb/leaderThumb.gif',
-			hidden:false,
-			detail:'<h1><center>突发事件检测</h1></center><br>&nbsp;&nbsp;&nbsp;&nbsp;反映各日统计的的舆论领袖用户及其领导度'
-		},{
-			text:'分时段在线人数统计',
-			id:'tianjishi',
-			icon:'images/thumb/tianjishiThumb.png',
-			hidden:false,
-			detail:'<h1><center>分时段在线人数统计</h1></center><br>&nbsp;&nbsp;&nbsp;&nbsp;反映各日特定时间段在线人数'
-		},{
-			text:'特定板块',
-			id:'tedingyonghu',
-			icon:'images/thumb/tedingyonghuThumb.gif',
-			hidden:false,
-			detail:'<h1><center>突发事件检测</h1></center><br>&nbsp;&nbsp;&nbsp;&nbsp;反映特定版块的用户活跃度'
+			detail:'为部门经理提供部门职员的设定管理。'
 		}]
 	},{
-		title:'用户配置信息',
-		hidden:(authority==='2'||authority==='4')?false:true,
+		title:'个人信息管理',
+		hidden:false,
 		nodes:[{
-			text:'话题聚类与突发检测',
+			text:'个人信息管理',
 			id:'clusterGrid',
 			icon:'images/thumb/clusterGridThumb.gif',
 			hidden:false,
-			detail:'<h1><center>话题聚类与突发检测</center></h1><br>&nbsp;&nbsp;&nbsp;&nbsp;用户配置字段'
+			detail:'登录密码'
 		},{
-			text:'web资源配置',
+			text:'修改登录密码',
 			id:'dicGrid',
 			icon:'images/thumb/dicGridThumb.gif',
 			hidden:false,
-			detail:'<h1><center>web资源配置</h1></center><br>&nbsp;&nbsp;&nbsp;&nbsp;用户配置字段'
-		},{
-			text:'用户行为模块配置',
-			id:'behaveGrid',
-			icon:'images/thumb/behaveGridThumb.gif',
-			hidden:false,
-			detail:'<h1><center>用户行为模块配置</h1></center><br>&nbsp;&nbsp;&nbsp;&nbsp;用户配置字段'
-		}]
-	},{
-		title:'系统管理',
-		hidden:(authority==='2'||authority==='4')?false:true,
-		nodes:[{
-			text:'用户权限管理',
-			id:'userGrid',
-			icon:'images/thumb/userGridThumb.gif',
-			hidden:authority==='4'?false:true,
-			detail:'<h1><center>用户权限管理</center></h1><br>&nbsp;&nbsp;&nbsp;&nbsp;主要实现对不同权限用户的删除、添加、显示等操作。'
-		},{
-			text:'系统日志',
-			id:'systemLog',
-			icon:'images/thumb/systemLogThumb.gif',
-			hidden:false,
-			detail:'<h1><center>系统日志</center></h1><br>&nbsp;&nbsp;&nbsp;&nbsp;统一舆情系统的所有重要系统行为将会记录于此，您可以通过查看表格随时了解系统的运行状态，以便及时进行管理。<br>&nbsp;&nbsp;&nbsp;&nbsp;系统将记录：后台错误信息，用户登陆、注销信息，用户配置修改信息。'
+			detail:'登录密码'
 		}]
 	}];
 	this.store=new Ext.data.JsonStore({
