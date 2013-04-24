@@ -5,6 +5,8 @@
     <!-- ** CSS ** -->
     <!-- base library -->
     <link rel="stylesheet" type="text/css" href="ext/resources/css/ext-all.css" />
+    <link rel="stylesheet" type="text/css" href="ext/examples/ux/fileuploadfield/css/fileuploadfield.css"/>
+    <link rel="stylesheet" type="text/css" href="ext/examples/shared/examples.css" />
     <!-- page specific -->
 	<link rel="stylesheet" type="text/css" href="css/custom.css" />
 	<style type="text/css">
@@ -88,14 +90,24 @@
 	<script type="text/javascript" src="ext/examples/ux/gridfilters/filter/NumericFilter.js"></script>
 	<script type="text/javascript" src="ext/examples/ux/gridfilters/filter/BooleanFilter.js"></script>
     <script type="text/javascript" src="ext/examples/ux/RowEditor.js"></script>
-    
+    <script type="text/javascript" src="ext/examples/ux/fileuploadfield/FileUploadField.js"></script>
 	<!-- page specific -->
 	<script src="script/frame.js"></script>
+    <script src="script/homePage.js"></script>
+	<script src="script/loginWindow.js"></script>
+    <script src="script/QueryExpress.js"></script>
+    <script src="script/CreateExpress.js"></script>
+    <script src="script/UpdateExpress.js"></script>
+    <script src="script/AbnormalExpress.js"></script>
+    <script src="script/AgencyFund.js"></script>
+    <script src="script/AgencyFundRecord.js"></script>
+    <script src="script/ExportHistory.js"></script>
+    <script src="script/QueryHistory.js"></script>
+
 	<script src="script/logGrid.js"></script>
 	<script src="script/briefReport.js"></script>
 	<script src="script/exBriefReport.js"></script>
-	<script src="script/homePage.js"></script>
-	<script src="script/loginWindow.js"></script>
+
 	<script src="script/register.js"></script>
 	
 	<script src="script/newsGrid.js"></script>
@@ -106,7 +118,6 @@
 	<script src="script/behaveGrid.js"></script>
 	<script src="script/userGrid.js"></script>
 	<script src="script/dicGrid.js"></script>
-	
 	<script src="script/abnormal.js"></script>
 	<script src="script/huoyueyonghu.js"></script>
 	<script src="script/huoyueyonghuView.js"></script>
@@ -119,7 +130,7 @@
 	<script src="script/specialusers.js"></script>
 	<script src="script/tianjishi_first.js"></script>
 	<script src="script/abnormal_first.js"></script>
-	
+
 	<script src="script/topic-daily.js"></script>
 	<script src="script/topic-dwin.js"></script>
 	<script src="script/topic-hours.js"></script>

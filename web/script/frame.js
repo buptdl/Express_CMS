@@ -9,94 +9,36 @@ function createChangeTab(id)//if tab is not existed, create it, else change it t
 			case 'homePage':
 				p=new homePage();
 				break;
-			case 'briefReport':
-				p=new briefReport();
+			case 'QueryExpress':
+				p=new QueryExpress();
 				break;
-			case 'exBriefReport':
-				p=new exBriefReport();
+			case 'NewExpress':
+				p=new CreateExpress();
 				break;
-			case 'systemLog':
-				p=new logGrid();
+            case 'UpdateExpress':
+				p=new UpdateExpress();
 				break;
-			case 'userGrid':
-				p=new userGrid();
+			case 'AbnormalExpress':
+				p=new AbnormalExpress();
 				break;
-			case 'newsGrid':
-				p=new newsGrid();
+			case 'AgencyFund':
+				p=new AgencyFund();
 				break;
-			case 'paramGrid':
-				p=new paramGrid();
+			case 'AgencyFundRecord':
+				p=new AgencyFundRecord();
 				break;
-			case 'clusterGrid':
-				p=new clusterGrid();
-				break;
-			case 'behaveGrid':
-				p=new behaveGrid();
-				break;
-			case 'dicGrid':
-				p=new dicGrid();
-				break;	
-			case 'top10':
-				p=new top10();
-				break;
-			case 'microBlog':
-				p=new microBlog();
-				break;
-			case 'abnormal':
-				p=new abnormal();
-				break;
-			case 'huoyueyonghu':
-				p=new huoyueyonghu();
-				break;
-			case 'dangeyonghu':
-				p=new dangeyonghu();
-				break;
-			case 'leader':
-				p=new leader();
-				break;
-			case 'tianjishi':
-				p=new tianjishi();
-				break;
-			case 'tedingyonghu':
-				p=new tedingyonghu();
-				break;
-			case 'zhuzhuangtu':
-				p=new zhuzhuangtu();
-				break;
-			case 'yonghuxinxiliebiao':
-				p=new yonghuxinxiliebiao();
-				break;				
-			case 'specialusers':
-				p=new specialusers();
-				break;
-			case 'TopicDaily':
-				p=new TopicDaily();
-				break;
-			case 'TopicHours':
-				p=new TopicHours();
-				break;
-			case 'TopicEmerg':
-				p=new TopicEmerg();
-				break;
-			case 'TopTen':
-				p=new TopTen();
-				break;
-			case 'WebIllegalMonitor':
-				p=new WebIllegalMonitor();
-				break;
-			case 'WebNegativeMonitor':
-				p=new WebNegativeMonitor();
-				break;
-			case 'WebSensitiveMonitor':
-				p=new WebSensitiveMonitor();
-				break;
-			case 'WebChart':
-				p=new WebChart();
-				break;
-			
+            case 'ExportHistory':
+               
+                p=new ExportHistory();
+                break;
+            case 'QueryHistory':
+             alert(id);
+                p= new QueryHistory();
+                break;
 			default:
 				break;
 		};
+        alert(id);
 		if (p!=null)
 		{
 			p.init(main);
@@ -180,7 +122,7 @@ function doFrame(authority)
 						listeners:{
 							scope:this,
 							click:function(node,e){
-								createChangeTab('briefReport');
+								createChangeTab('QueryExpress');
 							}
 						}
 					},{
@@ -190,7 +132,7 @@ function doFrame(authority)
 						listeners:{
 							scope:this,
 							click:function(node,e){
-								createChangeTab('exBriefReport');
+								createChangeTab('NewExpress');
 							}
 						}
 					},{
@@ -200,7 +142,7 @@ function doFrame(authority)
 						listeners:{
 							scope:this,
 							click:function(node,e){
-								createChangeTab('newsGrid');
+								createChangeTab('UpdateExpress');
 							}
 						}
 					},{
@@ -210,7 +152,7 @@ function doFrame(authority)
 						listeners:{
 							scope:this,
 							click:function(node,e){
-								createChangeTab('top10');
+								createChangeTab('AbnormalExpress');
 							}
 						}
 					}]
@@ -225,23 +167,13 @@ function doFrame(authority)
 				root:new Ext.tree.AsyncTreeNode({
 					expanded:true,
 					children:[{
-						text:'运费设定',
-						icon:'images/icons/album.gif',
-						leaf: true,
-						listeners:{
-							scope:this,
-							click:function(node,e){
-								createChangeTab('WebIllegalMonitor');
-							}
-						}
-					},{
-						text:'收支记录',
+						text:'代收款收支记录',
 						icon:'images/icons/exclamation.gif',
 						leaf: true,
 						listeners:{
 							scope:this,
 							click:function(node,e){
-								createChangeTab('WebNegativeMonitor');
+								createChangeTab('AgencyFund');
 							}
 						}
 					},{
@@ -251,7 +183,7 @@ function doFrame(authority)
 						listeners:{
 							scope:this,
 							click:function(node,e){
-								createChangeTab('WebSensitiveMonitor');
+								createChangeTab('AgencyFundRecord');
 							}
 						}
 					}]
@@ -347,7 +279,38 @@ function doFrame(authority)
 						}
 					}]				
 				})
-			}]
+			},{
+				xtype:'treepanel',
+				title:'历史数据管理',
+				id:'treePanel6',
+				lines:false,
+				rootVisible:false,
+				root: new Ext.tree.AsyncTreeNode({
+					expanded: true,
+					children: [{
+						text: '导出历史数据',
+						icon:'images/icons/article.gif',
+						leaf: true,
+						listeners:{
+							scope:this,
+							click:function(node,e){
+								createChangeTab('ExportHistory');
+							}
+						}
+					},{
+						text: '操作历史数据查询',
+						icon:'images/icons/article.gif',
+						leaf: true,
+						listeners:{
+							scope:this,
+							click:function(node,e){
+								createChangeTab('QueryHistory');
+							}
+						}
+					}]
+				})
+				//html:'test1'
+			},]
 		},{
 			xtype:'tabpanel',
 			//title:'Detail',
@@ -399,7 +362,7 @@ function doFrame(authority)
 					}
 				},'-',{
 					text:'快件信息管理(<U>i</U>)',
-					id:'bIntegration',
+					id:'Express',
 					listeners:{
 						menushow:function(){
 							new Ext.KeyMap('bIntergrationMenu',[{
@@ -407,71 +370,63 @@ function doFrame(authority)
 								alt:true,
 								stopEvent:true,
 								fn:function(){
-									keyPressMenu('exBriefReport','bIntegration');
+									keyPressMenu('QueryExpress','Express');
 								}
 							},{
 								key:'f',
 								alt:true,
 								stopEvent:true,
 								fn:function(){
-									keyPressMenu('briefReport','bIntegration');
+									keyPressMenu('NewExpress','Express');
 								}
 							},{
 								key:'n',
 								alt:true,
 								stopEvent:true,
 								fn:function(){
-									keyPressMenu('newsGrid','bIntegration');
+									keyPressMenu('UpdateExpress','Express');
 								}
-							},/*{
-								key:'t',
-								alt:true,
-								stopEvent:true,
-								fn:function(){
-									keyPressMenu('top10','bIntegration');
-								}
-							},*/{
+							},{
 								key:'m',
 								alt:true,
 								stopEvent:true,
 								fn:function(){
-									keyPressMenu('microBlog','bIntegration');
+									keyPressMenu('AbnormalExpress','Express');
 								}
 							}])
 						}
 					},
 					menu:{
-						id:'bIntergrationMenu',
+						id:'ExpressMenu',
 						items:[{
 							text:'快件查询(<U>f</U>)',
 							icon:'images/icons/article.gif',
 							handler:function(b,e){
-								createChangeTab('briefReport');
+								createChangeTab('QueryExpress');
 							}
 						},{
 							text:'运单录入(<U>b</U>)',
 							icon:'images/icons/article.gif',
 							handler:function(b,e){
-								createChangeTab('exBriefReport');
+								createChangeTab('NewExpress');
 							}
 						},{
 							text:'快件状态更新(<U>n</U>)',
 							icon:'images/icons/rss.gif',
 							handler:function(b,e){
-								createChangeTab('newsGrid');
+								createChangeTab('UpdateExpress');
 							}
 						},{
-							text:'异常快件处理(<U>n</U>)',
-							hidden:true,
+							text:'异常快件处理(<U>m</U>)',
 							icon:'images/icons/calendar-sprites.gif',
 							handler:function(b,e){
-								createChangeTab('top10');
+								createChangeTab('AbnormalExpress');
 							}
 						}]
 					}
 				},{
 					text:'财务信息管理(<U>w</U>)',
-					id:'bWeb',
+					id:'Finance',
 					listeners:{
 						menushow:function(){
 							new Ext.KeyMap('bWebMenu',[{
@@ -479,51 +434,31 @@ function doFrame(authority)
 								alt:true,
 								stopEvent:true,
 								fn:function(){
-									keyPressMenu('WebIllegalMonitor','bWeb');
+									keyPressMenu('AgencyFund','Finance');
 								}
 							},{
 								key:'n',
 								alt:true,
 								stopEvent:true,
 								fn:function(){
-									keyPressMenu('WebNegativeMonitor','bWeb');
-								}
-							},{
-								key:'s',
-								alt:true,
-								stopEvent:true,
-								fn:function(){
-									keyPressMenu('WebSensitiveMonitor','bWeb');
-								}
-							},{
-								key:'c',
-								alt:true,
-								stopEvent:true,
-								fn:function(){
-									keyPressMenu('WebChart','bWeb');
+									keyPressMenu('AgencyFundRecord','Finance');
 								}
 							}])
 						}
 					},
 					menu:{
-						id:'bWebMenu',
+						id:'FinanceMenu',
 						items:[{
-							text:'运费设定(<U>s</U>)',
-							icon:'images/icons/icon-by-category.gif',
-							handler:function(b,e){
-								createChangeTab('WebSensitiveMonitor');
-							}											
-						},{
-							text:'收支记录(<U>l</U>)',
+							text:'代收款收支记录(<U>l</U>)',
 							icon:'images/icons/icon-by-date.gif',
 							handler:function(b,e){
-								createChangeTab('WebIllegalMonitor');
+								createChangeTab('AgencyFund');
 							}						
 						},{
 							text:'收入统计(<U>n</U>)',
 							icon:'images/icons/event.gif',
 							handler:function(b,e){
-								createChangeTab('WebNegativeMonitor');
+								createChangeTab('AgencyFundRecord');
 							}
 						}]
 					}
@@ -684,6 +619,44 @@ function doFrame(authority)
 							}
 						}]
 					}
+				},{
+					text:'历史数据管理(<U>h</U>)',
+					id:'History',
+					listeners:{
+						menushow:function(){
+							new Ext.KeyMap('bIntergrationMenu',[{
+								key:'z',
+								alt:true,
+								stopEvent:true,
+								fn:function(){
+									keyPressMenu('ExportHistory','History');
+								}
+							},{
+								key:'x',
+								alt:true,
+								stopEvent:true,
+								fn:function(){
+									keyPressMenu('QueryHistory','History');
+								}
+							}])
+						}
+					},
+					menu:{
+						id:'ExpressMenu',
+						items:[{
+							text:'导出历史数据(<U>z</U>)',
+							icon:'images/icons/article.gif',
+							handler:function(b,e){
+								createChangeTab('ExportHistory');
+							}
+						},{
+							text:'查看历史操作数据(<U>x</U>)',
+							icon:'images/icons/article.gif',
+							handler:function(b,e){
+								createChangeTab('QueryHistory');
+							}
+						}]
+					}
 				},'->',{
 					xtype:'button',
 					icon:'images/icons/logout.gif',
@@ -693,7 +666,7 @@ function doFrame(authority)
 			]
 		}]
 	});
-	createChangeTab('briefReport');
+	createChangeTab('homePage');
 	var map=new Ext.KeyMap(Ext.getDoc(),[{
 		key:'h',
 		alt:true,

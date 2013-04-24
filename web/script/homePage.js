@@ -5,19 +5,19 @@ homePage=function(){
 		hidden:false,
 		nodes:[{
 			text:'快件查询',
-			id:'briefReport',
+			id:'QueryExpress',
 			icon:'images/thumb/briefReportThumb.gif',
 			hidden:false,
 			detail:'按运单号、客户名、时间、运单状态等运单属性相关的条件查询'
 		},{
 			text:'运单录入',
-			id:'newsGrid',
+			id:'NewExpress',
 			icon:'images/thumb/newsGridThumb.gif',
 			hidden:false,
 			detail:'提供客户发货清单录入包括人工手功录入和EXCEL表格批量录入'
 		},{
 			text:'快件状态更新',
-			id:'newsGrid',
+			id:'UpdateExpress',
 			icon:'images/thumb/newsGridThumb.gif',
 			hidden:false,
 			detail:'包括快件收取、入库、出库、送达等处理快件的操作信息更新提供两种操作接口在界面人工点击相应按键更新、通过巴枪扫描生成运单号列表批量更新'
@@ -32,20 +32,14 @@ homePage=function(){
 		title:'财务信息管理',
 		hidden:false,
 		nodes:[{
-			text:'运费设定',
-			id:'WebSensitiveMonitor',
-			icon:'images/thumb/WebSensitiveMonitorThumb.gif',
-			hidden:false,
-			detail:'制定修攻不同收发区间的运费。'
-		},{
 			text:'代收款收支记录',
-			id:'WebIllegalMonitor',
+			id:'AgencyFund',
 			icon:'images/thumb/WebIllegalMonitorThumb.gif',
 			hidden:false,
-			detail:'包括从商家收取的邮费款、支付给快递商的费用。'
+			detail:'包括从快递商收取的代收款、支付给商家的代收款。'
 		},{
 			text:'收入统计',
-			id:'WebNegativeMonitor',
+			id:'AgencyFundRecord',
 			icon:'images/thumb/WebNegativeMonitorThumb.gif',
 			hidden:false,
 			detail:'按一定时间段给出公司运营收支总额的变化情况。提供统计结果的导出接口'
@@ -97,6 +91,22 @@ homePage=function(){
 			icon:'images/thumb/dicGridThumb.gif',
 			hidden:false,
 			detail:'登录密码'
+		}]
+	},{
+		title:'历史数据管理',
+		hidden:false,
+		nodes:[{
+			text:'导出历史数据',
+			id:'ExportHistory',
+			icon:'images/thumb/briefReportThumb.gif',
+			hidden:false,
+			detail:'导出系统历史数据存档'
+		},{
+			text:'操作历史查询',
+			id:'QueryHistory',
+			icon:'images/thumb/newsGridThumb.gif',
+			hidden:false,
+			detail:'查询员工操作历史'
 		}]
 	}];
 	this.store=new Ext.data.JsonStore({
