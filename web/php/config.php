@@ -32,7 +32,7 @@
 				$this->loadOneLine(fgets($this->handle));
 			}
 			$this->close();
-			//print_r($this->config);
+			//print_r($this->config); //@test
 		}
 		function get($key)
 		{
@@ -71,10 +71,10 @@
 		function defaultConfig()
 		{
 			$default='{
-				"MYSQL_HOST":"59.64.138.184",
+				"MYSQL_HOST": "127.0.0.1",
 				"MYSQL_USER":"root",
 				"MYSQL_PSW":"123",
-				"MYSQL_DB":"buptyq"
+				"MYSQL_DB":"test"
 			}';
 			return json_decode($default);
 		}
